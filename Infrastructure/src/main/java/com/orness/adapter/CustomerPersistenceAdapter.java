@@ -24,8 +24,10 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
 
     @Override
     public Optional<Customer> findByMail(String mail) {
-        CustomerEntity customerEntity = customerRepository.findByMail(mail).orElseThrow(CustomerNotFoundException::new);
-        return Optional.of(customerEntityMapper.mapCustomerEntityToCustomer(customerEntity));
+        Optional<CustomerEntity> customerEntity = customerRepository.findByMail(mail);
+
+        return customerEntity.map(customerEntityMapper::mapCustomerEntityToCustomer);
+
     }
 
 }

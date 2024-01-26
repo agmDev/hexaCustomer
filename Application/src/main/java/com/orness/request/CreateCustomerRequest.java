@@ -1,5 +1,6 @@
 package com.orness.request;
 
+import com.orness.validation.UniqueEmail;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 
@@ -16,6 +17,7 @@ public class CreateCustomerRequest {
     private String lastname;
     @NotBlank
     @Email(message = "Email should be valid")
+    @UniqueEmail
     //@UniqueEmail
     private String mail;
     @Max(value = 150, message = "age should not be more than 150")

@@ -32,5 +32,10 @@ public class CustomerAdapter implements CustomerPort {
                 .findByMail(mail).orElseThrow(CustomerNotFoundException::new);
     }
 
+    @Override
+    public boolean existByMail(String mail){
+        return customerPersistencePort.findByMail(mail).isPresent();
+    }
+
 
 }
