@@ -26,6 +26,7 @@ public class Customer {
 
     private UUID id;
 
+
     public Customer(UUID id, String firstname, String lastname, String mail){
         this.id = id;
         this.firstname = firstname;
