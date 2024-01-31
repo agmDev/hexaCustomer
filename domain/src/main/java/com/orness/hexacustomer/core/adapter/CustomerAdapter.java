@@ -30,7 +30,7 @@ public class CustomerAdapter implements CustomerPort {
             for (ConstraintViolation<Customer> constraintViolation : violations) {
                 sb.append(constraintViolation.getMessage());
             }
-            throw new ConstraintViolationException("Error occurred: " + sb.toString(), violations);
+            throw new ConstraintViolationException("Error occurred: " + sb, violations);
         }
 
 
