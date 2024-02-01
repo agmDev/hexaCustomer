@@ -15,6 +15,6 @@ from root folder :
 from application folder :  
 `mvn spring-boot:run -D"spring-boot.run.profiles"=local`
 
--It is possible to access database [here](http://localhost:8080/h2-console).
--Swagger is accessible [here](http://localhost:8080/swagger-ui.html).
+- It is possible to access database [here](http://localhost:8080/h2-console).
+- Swagger is accessible [here](http://localhost:8080/swagger-ui.html).
 
