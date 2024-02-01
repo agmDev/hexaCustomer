@@ -5,8 +5,9 @@ import com.orness.hexacustomer.core.model.Customer;
 import java.util.UUID;
 
 public interface CustomerPort {
-    public UUID createCustomer(Customer customer);
-    public Customer getCustomerByMail(String mail);
+    UUID createCustomer(Customer customer);
 
-    public boolean existByMail(String mail);
+    Customer getCustomerByMail(String mail);
+
+    boolean existByMail(String mail);
 }

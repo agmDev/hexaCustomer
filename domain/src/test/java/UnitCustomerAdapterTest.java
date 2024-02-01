@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class CustomerAdapterTest {
+class UnitCustomerAdapterTest {
     private static final CustomerPersistencePort CUSTOMER_REPOSITORY_PERSISTENCE = mock(CustomerPersistencePort.class);
     private static final AgifyPort AGIFY_PORT = mock(AgifyPort.class);
     private static final Validator VALIDATOR = mock(Validator.class);
