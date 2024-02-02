@@ -37,11 +37,10 @@ class IntegrationCustomerTest {
     void shouldReturn404ForWrongmailAddress() throws Exception {
         mvc.perform(get(GET_CUSTOMER_ENDPOINT, "wrong")).andDo(print()).andExpect(status().isNotFound())
                 .andExpect(content().json(
-                        "{\"title\": \"NOT_FOUND\", \"description\": \"Customer not found\"}"))
-                .andExpect(jsonPath("$.stacktraceId").isString());
+                        "{\"title\": \"NOT_FOUND\", \"description\": \"Customer not found\"}"));
     }
 
-    @Sql(value = "/dataset.sql")
+    //@Sql(value = "/dataset.sql")
     @Test
     void shouldReturn200ForCorrectmailAddress() throws Exception {
         mvc.perform(get(GET_CUSTOMER_ENDPOINT, "ck@gmail.com")).andDo(print())
@@ -80,11 +79,10 @@ class IntegrationCustomerTest {
 
         mvc.perform(get(GET_CUSTOMER_ENDPOINT, "37")).andDo(print()).andExpect(status().isNotFound())
                 .andExpect(content().json(
-                        "{\"title\": \"NOT_FOUND\", \"description\": \"Customer not found\"}"))
-                .andExpect(jsonPath("$.stacktraceId").isString());
+                        "{\"title\": \"NOT_FOUND\", \"description\": \"Customer not found\"}"));
     }
 
-    @Sql(value = "/dataset.sql")
+    //@Sql(value = "/dataset.sql")
     @Test
     void shouldReturn400ForExistingmail() throws Exception {
         mvc.perform(post(POST_CUSTOMERS_ENDPOINT).contentType("application/json").content("{\n\"firstname\": \"nicholas\",\n\"lastname\": \"Wolfwood\",\n\"age\": 37,\n\"mail\": \"ck@gmail.com\"\n}"))

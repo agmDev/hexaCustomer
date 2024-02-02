@@ -16,22 +16,19 @@ public class ErrorHandler {
     @ExceptionHandler(CustomerNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorResponse handleCustomerNotFoundException(CustomerNotFoundException e) {
-        UUID stacktraceId = UUID.randomUUID();
-        return new ErrorResponse(e.getMessage(), stacktraceId, HttpStatus.NOT_FOUND.name());
+        return new ErrorResponse(e.getMessage(), HttpStatus.NOT_FOUND.name());
     }
 
     @ExceptionHandler(UniqueEmailException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ErrorResponse handleUniqueEmailFoundException(UniqueEmailException e) {
-        UUID stacktraceId = UUID.randomUUID();
-        return new ErrorResponse(e.getMessage(), stacktraceId, HttpStatus.CONFLICT.name());
+        return new ErrorResponse(e.getMessage(), HttpStatus.CONFLICT.name());
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleConstraintViolationExceptionException(ConstraintViolationException e) {
-        UUID stacktraceId = UUID.randomUUID();
-        return new ErrorResponse(e.getMessage(), stacktraceId, HttpStatus.BAD_REQUEST.name());
+        return new ErrorResponse(e.getMessage(),HttpStatus.BAD_REQUEST.name());
     }
 
 }
